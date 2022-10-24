@@ -8,7 +8,7 @@ public class Conta {
 	private String dono= "Usuário";
 	private double saldo = 0;
 	private boolean status = false;
-	boolean terminal=false;
+	boolean terminal = false;
 	
 
 	
@@ -67,7 +67,7 @@ public class Conta {
 		 if (tipoConta==1){
 			tipo = "cc";
 			System.out.println("Conta Corrente criada com sucesso!");
-		 } else if (tipoConta ==2){
+		 } else if (tipoConta == 2){
 			tipo = "cp";
 			System.out.println("Conta Poupança criada com sucesso!");
 		 } else {
