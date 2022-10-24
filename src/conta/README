@@ -1,0 +1,15 @@
+# Exercício conta bancária
+
+O objetivo desse exercício foi criar um código em java, utilizando programação orientada o objetos, que representasse o funcionamento de uma conta conta bancária.
+
+As operações consideras foram:
+- Abrir conta (na abertura de conta existe a possibilidade de escolher entre conta corrente e poupança. Caso escolhida a conta corrente o usuário recebe um bônus 
+de 50 reais e na escolha da poupança, 150.)
+- Fechar conta (para o fechamento da conta é necessário que o saldo da conta seja igual a zero)
+- Sacar (verificar se o saldo é suficiente)
+- Depositar
+- Consultar saldo
+- Pagar mensalidade (no valor de R$ 12,00 para conta corrente e R$ 10,00 para a poupança)
+
+** Em cada uma das operações (exceto abrir conta) é necessário verificar se a conta está aberta.
+
