@@ -22,19 +22,19 @@ public class Conta {
 			int operacao = entrada.nextInt();
 			switch (operacao) {
 				case 1:
-					abrirConta();
+					this.abrirConta();
 					break;
 				case 2:
-					fecharConta();
+					this.fecharConta();
 					break;
 				case 3:
-					sacar();
+					this.sacar();
 					break;
 				case 4:
-					depositar();
+					this.depositar();
 					break;
 				case 5:
-					consultarSaldo();
+					this.consultarSaldo();
 					break;
 				case 6:
 					terminal=false;
@@ -47,12 +47,12 @@ public class Conta {
 	}
 	
 	public void iniciarMenu() {
-		terminal = true;
-		menu(terminal);
+		this.terminal = true;
+		this.menu(terminal);
 	}
 		
 	public void setnumConta(int nConta){
-		numConta = nConta;
+		this.numConta = nConta;
 	}
 	
 	public int getnumConta(){
@@ -85,7 +85,7 @@ public class Conta {
 	}
 	
 	public void setDono(String donoConta){
-		dono=donoConta;
+		this.dono=donoConta;
 	}
 	
 	public String getDono(){
@@ -93,7 +93,7 @@ public class Conta {
 	}
 		
 	public void setSaldo(double saldoConta){
-		saldo=saldoConta;
+		this.saldo=saldoConta;
 	}
 	
 	public double getSaldo(){
@@ -101,7 +101,7 @@ public class Conta {
 	}
 	
 	public void setStatus(boolean statusConta){
-		status=statusConta;
+		this.status=statusConta;
 	}
 	
 	public boolean getStatus(){
@@ -109,23 +109,23 @@ public class Conta {
 	}
 		
 	public void abrirConta() {		
-		setStatus(true);
+		this.setStatus(true);
 		Scanner entradaDono = new Scanner(System.in);
 		System.out.println("Digite o nome do usuário: ");
 		String donoConta = entradaDono.nextLine();
-		setDono(donoConta);
-		setTipo();
-		if(getTipo() == "Conta corrente") {
-			setSaldo(50);			
+		this.setDono(donoConta);
+		this.setTipo();
+		if(this.getTipo() == "Conta corrente") {
+			this.setSaldo(50);			
 		} else {
-			setSaldo(150);
+			this.setSaldo(150);
 		}
 	}
 	
 	public void fecharConta() {
-		if (getStatus()==true) {
-			if (getSaldo()==0) {
-				setStatus(false);
+		if (this.getStatus()==true) {
+			if (this.getSaldo()==0) {
+				this.setStatus(false);
 			} else {
 				System.out.println("Operação inválida, o saldo tem que ser igual a zero.");}
 		}else {
@@ -135,26 +135,26 @@ public class Conta {
 		
 	public void depositar() {	
 		 
-		if (getStatus()==true) {
+		if (this.getStatus()==true) {
 			 Scanner entrada = new Scanner(System.in);
 			 System.out.print("Digite o valor depositado: ");			 
 			 double deposito = entrada.nextDouble();	
 			 double novoSaldo= deposito + getSaldo();
-			 setSaldo(novoSaldo);
+			 this.setSaldo(novoSaldo);
 		} else {
 			 System.out.print("Sua conta ainda está fechada ");		
 		}
 	}
 	
 	public void sacar() {	
-		if (getStatus()==true) {
+		if (this.getStatus()==true) {
 			 Scanner entrada = new Scanner(System.in);
 			 System.out.print("Digite o valor: ");			 
 			 double saque = entrada.nextDouble();
 			 double valorTotal=getSaldo();
 			 if (saque<=valorTotal){
 				 double novoSaldo= getSaldo()-saque;
-				 setSaldo(novoSaldo);
+				 this.setSaldo(novoSaldo);
 			 } else {
 				 System.out.println("Saldo insuficiente ");	
 			 }
@@ -167,15 +167,15 @@ public class Conta {
 	public void pagarMensalidade() {
 		int mensalidade;
 		double saldoFinal = getSaldo();
-		if (getStatus() == true) {
-			if (getTipo() == "Conta Corrente") {
+		if (this.getStatus() == true) {
+			if (this.getTipo() == "Conta Corrente") {
 				mensalidade = 12; 
 			} else {
 				mensalidade = 10; 
 			}
 			
 			if (saldoFinal<=mensalidade) {
-				setSaldo(saldoFinal-mensalidade);
+				this.setSaldo(saldoFinal-mensalidade);
 			} else {
 				System.out.print("Saldo insufience para a manutenção da conta");		
 			}
@@ -185,7 +185,7 @@ public class Conta {
 	}
 	
 	public void consultarSaldo() {
-		if (getStatus()==true) {
+		if (this.getStatus()==true) {
 			System.out.println("O saldo da conta é R$: " + getSaldo());
 		} else {
 			System.out.println("Sua conta ainda está fechada");
